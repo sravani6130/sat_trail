@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body {
+  min-height: 100vh;
+  /* background: mediumaquamarine; */
+}
+.sidebar {
+  position: absolute;
+  width: 3%;
+  height: 100vh;
+  background: seashell;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.sidebar:hover {
+  width: 20%;
+}
+.sidebar ul {
+  position: relative;
+  height: 100vh;
+}
+.sidebar ul li {
+  list-style: none;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+.sidebar ul li:hover {
+  background: #f3f3f3;
+}
+.sidebar ul li a {
+  position: relative;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.sidebar ul li a .icon {
+  position: absolute;
+  display: contents;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: #333;
+}
+.sidebar ul li a .text {
+  position: relative;
+  height: 10%;
+  display: none;
+  align-items: center;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+div {
+  width: 80%;
+  margin-bottom: 80%;
+}
+.sidebar:hover ul li .text {
+  display: contents;
+}
+.sidebar:hover div {
+  width: 10%;
+  margin-bottom: -2%;
+}
+#home {
+  background-image: url("Screenshot from 2024-02-06 16-12-51.png");
+  background-size: cover;
+  /* background-color: #333; */
+  background-position: center;
+
+  height: 100vh;
+}
+#home h1 {
+  justify-content: center;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  transform: rotateY(-50%);
+  width: 100%;
+  color: #f3f3f3;
+  font-size: 500%;
+  letter-spacing: 0.1em;
+  margin-left: 20%;
+  margin-right: 30%;
+  margin-top: -5%;
+  color: transparent;
+  -webkit-text-stroke: 3px black;
+  position: absolute;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+#home h1::before {
+  content: "Your Vision Our Tools";
+
+  position: absolute;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  color: black;
+  border-right: 8px solid black;
+  transition: 1s ease-in-out;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: italic;
+  justify-content: center;
+}
+#home h1:hover::before {
+  width: 100%;
+  filter: drop-shadow(0 0 50px rgb(7, 10, 226));
+}
+#home h2 {
+  font-family: "Style Script", cursive;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  transform: rotateY(-50%);
+  width: 100%;
+  font-size: xx-large;
+}
+
+/* ///////////////////////////////////////////image for sidebar */
+#i1 {
+  background-image: url(home-outline.svg);
+  background-repeat: no-repeat;
+}
+#i2 {
+  background-image: url(person-circle-outline.svg);
+  background-repeat: no-repeat;
+}
+#i3 {
+  background-image: url(images-outline.svg);
+  background-repeat: no-repeat;
+}
+#i4 {
+  background-image: url(videocam-outline.svg);
+  background-repeat: no-repeat;
+}
+#i5 {
+  background-image: url(eye-outline.svg);
+  background-repeat: no-repeat;
+}
+#i6 {
+  background-image: url(settings-outline.svg);
+  background-repeat: no-repeat;
+}

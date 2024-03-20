@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles.css') }}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&family=Style+Script&display=swap"
+      rel="stylesheet"
+    />
+    <title>Your Website</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="sidebar">
+      <nav>
+        <ul>
+          <li>
+            <a href="{{ url_for('home') }}">
+              <section><span class="icon"><div id="i1">.</div></span>
+              <span class="text"><br>Home</span></section></a>
+          </li>
+          <li>
+            <a href="{{ url_for('signin') }}">
+              <span class="icon"><div id="i2">.</div></span>
+              <span class="text"><br>Sign In</span></a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('upload') }}">
+              <span class="icon"><div id="i3">.</div></span>
+              <span class="text"><br>Upload Images</span></a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('customize') }}">
+              <span class="icon"><div id="i4">.</div></span>
+              <span class="text" style="float: left;"
+                ><br>Video Customization</span
+              ></a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('preview') }}">
+              <span class="icon"><div id="i5">.</div></span>
+              <span class="text"><br>Preview</span></a
+            >
+          </li>
+          <li>
+            <a href="output.html">
+              <span class="icon"><div id="i6">.</div></span>
+              <span class="text"><br>Output Settings</span></a
+            >
+          </li>
+         
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Homepage -->
+      <section id="home">
+        <h1>
+          Your Vision Our Tools
+        </h1>
+
+        <br />
+        <h2>
+          <br />
+          Exceptional images deserve an exceptional presentation
+        </h2>
+        <!-- <a href="#upload" class="cta-button">Get Started</a> -->
+      </section>
+    </main>
+
+    <script src="{{ url_for('static',filename='script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+.button {
+    
+    border-radius: 20px; 
+    padding: 10px 20px; 
+    background-color: #55056e; 
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    display: flex;
+}
+
+
+.button:hover{
+    background-color: blueviolet; 
+}
+body {
+    background-image: url('violet.jpg'); /* Replace 'background-image.jpg' with the path to your desired background image */
+    background-size: cover;
+    background-position: center;
+    padding: 5%;
+    background-attachment: fixed;
+    
+}
+
+/* Styling for the translucent box */
+#register-box {
+    background-color: rgba(245, 244, 246, 0.8); /* RGBA color with 80% opacity */
+    padding: 5%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    min-height: 9vh;
+    border-radius: 2cap;
+
+}
+.wrapper h1 {
+    text-align: center;
+    font-size: 0.9cm;
+}
+
+.wrapper .input-box{
+    width:150%;
+    height: 50px;
+    
+}
+
+.input-box input{
+    background: transparent;
+    border: black;
+    outline: black;
+    border-radius: 40px;
+    border:2px solid black;
+    height: 80%;
+    text-size-adjust: 150%;
+}

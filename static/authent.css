@@ -1,0 +1,63 @@
+
+
+
+
+body {
+    background-image: url('purple.jpg'); /* Replace 'background-image.jpg' with the path to your desired background image */
+    background-size: cover;
+    background-position: center;
+    padding: 5%;
+    background-attachment: fixed;
+}
+
+/* Styling for the translucent box */
+#translucent-box {
+    background-color: rgba(255, 255, 255, 0.8); /* RGBA color with 80% opacity */
+    padding: 10%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    border-radius: 2cap;
+}
+.btn {
+    
+    border-radius: 20px; 
+    padding: 10px 20px; 
+    background-color: #530a72; 
+    color: #fff; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+.btn:hover{
+    background-color: #7f1382;
+}
+
+
+
+.wrapper h1 {
+    text-align: center;
+    font-size: 0.9cm;
+}
+
+.wrapper .input-box{
+    width:100%;
+    height: 50px;
+    
+}
+
+.input-box input{
+    background: transparent;
+    border: black;
+    outline: black;
+    border-radius: 40px;
+    border:2px solid black;
+    height: 80%;
+    
+   
+    
+}
+
+

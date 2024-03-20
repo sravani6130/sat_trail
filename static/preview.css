@@ -1,0 +1,32 @@
+body, html {
+  margin: 0%;
+  
+  height: 100%;
+  background-image: url('background.jpg'); /* Replace 'background.jpg' with your image path */
+  background-size: cover;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+ 
+
+  height: 100%;
+ 
+}
+
+video {
+  max-width: auto;
+  height: auto;
+  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+

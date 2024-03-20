@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customize</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='customize.css') }}" />
+    <style>
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .image-container {
+            margin-right: 10px;
+            position: relative;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 20%; /* Set the width of each image container */
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .image-container button {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <section id="customize">
+        <div>
+        <br>
+        <h2>Customize Your Video</h2>
+        <h4>Scroll down for Selecting images</h4>
+        <form action="/preview" method="POST">
+            <table>
+                <tr>
+                    <td><label for="imageDuration">Duration per Image (seconds):</label></td>
+                    <td><input type="number" id="imageDuration" name="imageDuration" min="1" step="1" value="3"></td>
+                </tr>
+                <tr>
+                    <td><label for="imageTransition">Transition between Images:</label></td>
+                    <td>
+                        <select id="imageTransition" name="imageTransition">
+                            <option value="fade">Fade</option>
+                            <option value="slide">Slide</option>
+                            <option value="zoom">Zoom</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="backgroundMusic">Background Music:</label></td>
+                    <td>
+                        <select id="backgroundMusic" name="backgroundMusic">
+                            <option value="">None</option>
+                            <option value="templates/audio/1.mp3">Audio 1</option>
+                            <option value="templates/audio/2.mp3">Audio 2</option>
+                            <option value="templates/audio/3.mp3">Audio 3</option>
+                            <option value="templates/audio/4.mp3">Audio 4</option>
+                            <option value="templates/audio/5.mp3">Audio 5</option>
+                           
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="resolution">Resolution:</label></td>
+                    <td>
+                        <select id="resolution" name="resolution">
+                            <option value="720p">720p</option>
+                            <option value="1080p">1080p</option>
+                            <option value="4k">4K</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <button type="submit" class="btn" align="right" required> Show Preview </button>
+        </form>
+        
+        
+       
+        <br><br><br>
+        <br><br><br>
+
+        <!-- Button to generate video from images -->
+       <div id="second">
+        <!-- Display images -->
+        <div id="imageContainer">
+          
+        </div>
+        <form action="/back" >
+            <button type="Submit" class="btn" align="right" required> Go To Upload Page </button>
+        </form>
+        <form action="/logout">
+            <button type="Submit" class="btn" align="right" required> LogOut </button>
+        </form>
+    </div>
+       
+    </div>
+    </section>
+
+    <script>
+        function toggleAudio(audioId) {
+            var audioElement = document.getElementById(audioId);
+            if (audioElement.paused && audioElement.readyState >= 2) {
+                audioElement.play();
+            } else {
+                audioElement.pause();
+            }
+        }
+
+        // Function to navigate to the Preview section
+        function goToPreview() {
+            window.location.href = "preview.html";
+        }
+
+        // Fetch images from server
+        fetch('/get_images')
+            .then(response => response.json())
+            .then(imageUrls => {
+                const imageContainer = document.getElementById('imageContainer');
+                imageUrls.forEach(imageUrl => {
+                    const container = document.createElement('div');
+                    container.classList.add('image-container');
+                    
+                    const img = document.createElement('img');
+                    img.src = imageUrl;
+                    container.appendChild(img);
+                    
+                    const selectButton = document.createElement('button');
+                    selectButton.textContent = 'Select';
+                    selectButton.onclick = () => toggleSelectDelete(imageUrl, selectButton);
+                    container.appendChild(selectButton);
+
+                    imageContainer.appendChild(container);
+                });
+            })
+            .catch(error => console.error('Error fetching images:', error));
+
+            function toggleSelectDelete(imageUrl, selectButton) {
+    const imageName = imageUrl.split('/').pop(); // Get image name from URL
+
+    if (selectButton.textContent === 'Select') {
+        // Send request to server to save the image to the 'saved_images' folder
+        fetch('/save_image', {
+            method: 'POST',
+            body: JSON.stringify({ imageUrl }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                selectButton.textContent = 'Delete';
+                console.log('Image selected and saved:', imageUrl);
+            } else {
+                console.error('Failed to save image:', imageUrl);
+            }
+        })
+        .catch(error => console.error('Error saving image:', error));
+    } else if (selectButton.textContent === 'Delete') {
+        // Send request to server to delete the image from the 'saved_images' folder
+        fetch('/delete_image', {
+            method: 'POST',
+            body: JSON.stringify({ filename: imageName }), // Pass the filename for deletion
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                selectButton.textContent = 'Select'; // Change button text back to 'Select'
+                console.log('Image deleted:', imageUrl);
+            } else {
+                console.error('Failed to delete image:', imageUrl);
+            }
+        })
+        .catch(error => console.error('Error deleting image:', error));
+    }
+}
+
+    </script>
+</body>
+</html>

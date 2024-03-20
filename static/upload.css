@@ -1,0 +1,92 @@
+#upload {
+  background-image: url(pxfuel.jpg);
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+button {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: #13486d;
+  color: #fff;
+  border:none;
+  cursor:pointer;
+  font-size: 16px;
+  float: right;
+  margin-right: 2%;
+
+}
+button:hover {
+  background-color: rgb(2, 51, 75);
+}
+
+#Next {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: #23597e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  float: right;
+  margin-right: 2%;
+}
+#Next:hover {
+  background-color: rgb(3, 35, 35);
+}
+#left,
+#right {
+  width: 625px;
+  min-height: 390px;
+  margin: 20px;
+  float: left;
+  border: 2px dashed #fff;
+}
+.list {
+  display: flex;
+  align-items: center;
+  cursor: grab;
+}
+#upload h2 {
+  font-size: 400%;
+  float: left;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+#droparea {
+  margin-bottom: 20%;
+  text-align: center;
+}
+#left,
+#right {
+  background-color: rgb(101, 181, 231);
+}
+h1 {
+  text-align: center;
+  color: rgb(222, 214, 214);
+}
+input[type="file"]::-webkit-file-upload-button {
+  padding: 6px 12px;
+  background-color: rgb(23, 128, 225);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-self: center;
+  margin-left: 10%;
+}
+
+
+.uploaded-image {
+  max-width: 200px; /* Adjust the width as needed */
+  max-height: 200px; /* Adjust the height as needed */
+  margin: 5px; /* Optional: Add margin between images */
+}
+.image {
+  max-width: 200px; /* Adjust the width as needed */
+  max-height: 200px; /* Adjust the height as needed */
+  margin: 5px; /* Optional: Add margin between images */
+}
+

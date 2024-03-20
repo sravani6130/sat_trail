@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='register.css') }}"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1></h1>
+    </header>
+    <section id="Reg">
+      <div id="register-box">
+        <div class="wrapper">
+          <table>
+            <tr>
+              <td>
+                <form action="/signup" method="post">
+                  <h1>Sign Up</h1>
+                  <!-- <div class="input-box">
+                    <input type="text" placeholder="Username" required />
+                    <i class="bx bx-user-circle"></i>
+                  </div> -->
+
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Username"
+                      required
+                    />
+                    <i class="bx bx-user"></i>
+                  </div>
+                  <br />
+                  <div class="input-box">
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      required
+                    />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+                  <br />
+                  <div class="input-box">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                    />
+                    <i class="bx bx-envelope"></i>
+                  </div>
+
+                  <br />
+                  <br />
+                  <button type="Submit" class="button">Get Started</button>
+                </form>
+              </td>
+            </tr>
+          </table>
+
+          <div id="adminScreen" class="hidden"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{{ url_for('static',filename='script.js') }}"></script>
+  </body>
+</html>

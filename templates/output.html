@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Output</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='output.css') }}" />
+</head>
+<body>
+    <section id="output">
+        <br>
+    <h2>Output Settings</h2>
+    <table>
+        <tr>
+    <!-- Input field for the title -->
+    <td><label for="videoTitle">Title:</label></td>
+        <td><input type="text" id="videoTitle" name="videoTitle"></td>
+        </tr>
+    <tr>
+    <!-- Input fields for resolution and quality -->
+  <td>  <label for="videoWidth">Width:</label></td>
+  <td>  <input type="number" id="videoWidth" name="videoWidth" min="100" max="1000" step="10" value="480"></td>
+</tr>
+    <tr>
+        <td>  <label for="videoHeight">Height:</label></td>
+        <td> <input type="number" id="videoHeight" name="videoHeight" min="100" max="1000" step="10" value="360"></td>
+</tr>
+    <tr>
+        <td>   <label for="videoQuality">Quality (0-1):</label></td>
+        <td>   <input type="number" id="videoQuality" name="videoQuality" min="0" max="1" step="0.1" value="0.8"></td>
+</tr>
+</table>
+<br><br><br>
+    <!-- Button to create video -->
+    <button onclick="createVideo()">Save Video</button><br /><br /><br />
+    <form action="/logout">
+        <button type="Submit" class="btn" align="right" required> LogOut </button>
+      </form>
+</section>
+</body>
+</html>

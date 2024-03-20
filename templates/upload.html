@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Upload</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}" />
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </head>
+    <body>
+        <section id="upload"> 
+            <div><h2>Upload Images</h2></div>
+            <br><br><br><br><br><br>
+             
+            <div id="saved-images">
+                {% for image in image_list %}
+                  
+                        <img src="{{ url_for('static', filename='images/' + image) }}" class="image">
+
+                        
+                    
+                {% endfor %}
+            </div>
+            
+         <br><br>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div id="uploadArea">
+                    <!-- Drag-and-drop area for image upload -->
+                    <div class="drop-area">
+                        <input type="file" id="fileInput" multiple />
+                        <input type="submit" value="Upload Images">
+                    </div>
+                    <div id="uploadedImages"></div>
+                </div>
+            </form>
+            <br><br>
+            <form action="/customize">
+                <button type="Submit" class="btn" align="right" required> Customize Video </button>
+            </form>
+            <form action="/logout">
+                <button type="Submit" class="btn" align="right" required> LogOut </button>
+            </form>
+            
+        </section>
+    </body>
+</html>

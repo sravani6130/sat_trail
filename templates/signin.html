@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='authent.css') }}">
+   
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Your Website</title>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    
+    
+</header>
+
+</section>
+
+    <!-- User Authentication Pages -->
+    <section id="auth">
+        <div id="translucent-box">
+            <div class="wrapper">
+                <table>
+                    <tr>
+                        <td><!--If the form action is valid, Takes you to -->
+                            <form action="/signin" method="POST">
+                                <h1>Sign in</h1>
+                                <div class="input-box" >
+                                    <input type="text" placeholder="Username" name="username" required>
+                                    <i class='bx bx-user-circle' ></i>
+                                </div>
+                                <br>
+                                <div class="input-box" >
+                                    <input type="password" placeholder="Password" name="password" required >
+                                    <i class='bx bxs-lock-alt' style="height: 15%;" ></i>
+                                </div> 
+                                <br>
+                                <br>
+                                <button type="Submit" class="btn" align="right" required> Login </button>
+                              
+                                <!-- <button class="btn" onclick="goToUpload()">Next</button> -->
+                               
+                                <div class="register-link"><br>
+                                    
+                                    <!-- <p>Don't have an account? <button onclick="goToSignUp()" class="btn">Sign up</button></p> -->
+                                    <a href="{{ url_for('signup')}}">Dont have an account?? Sign Up</a>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+                <!-- Login and sign-up forms go here -->
+                <div id="adminScreen" class="hidden">
+                    <!-- Admin screen content goes here -->
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </section>
+    
+
+    <script >
+        window.goToUpload = function () {
+         window.location.href="upload.html";
+    };
+    </script>
+
+</body>
+</html>

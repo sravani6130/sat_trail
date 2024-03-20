@@ -1,0 +1,78 @@
+body {
+    background-image: url(1.jpg);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#second {
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+#customize h4{
+    text-align: center;
+    font-size: 120%;
+}
+#customize h2 {
+    font-size: 300%;
+    margin-left: 2%;
+}
+table {
+    
+    box-shadow: 0 0 20px 20px rgba(87, 3, 113, 0.861);
+    background-color: rgb(248, 197, 252);
+    border-color: rgb(64, 23, 63);
+    margin-left: 25%;
+    margin-top: 5%;
+    border-radius: 2cap;
+}
+table,th,td {
+    font-size: 30px;
+    border-collapse: collapse;
+    text-align: left;
+
+}
+th,td {
+    padding: 20px;
+}
+button {
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #6e0d7d;
+    color: #fff;
+    border:none;
+    cursor:pointer;
+    font-size: 16px;
+    float: right;
+    margin-right: 2%;
+
+}
+button:hover {
+    background-color: rgb(47, 27, 47);
+}
+
+
+input[type="file"]::-webkit-file-upload-button {
+        padding: 6px 12px;
+        background-color: #6e0d7d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="number"] {
+        padding: 8px;
+        border: 2px solid #180d0d;
+        border-radius: 4px;
+        width: 150px;
+        margin-bottom: 10px;
+        
+    }
+
+select {
+    border-width: 2px ;
+    border-color: #180d0d;
+    border-radius:10px ;
+    padding: 2%;
+    
+}
